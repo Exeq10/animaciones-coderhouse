@@ -79,7 +79,31 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    transition: all 4s
+}
+
+.cuadro:hover {
+    cursor: pointer;
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 2rem;
+}
+
+.left:hover {
+    transform: translateX(-10rem)
+}
+
+.top:hover {
+    transform: translateY(-10rem)
+}
+
+.bottom:hover {
+    transform: translateY(10rem)
+}
+
+.right:hover {
+    transform: translateX(10rem)
 }
 
 .aside {
@@ -150,5 +174,45 @@ a {
 @media(min-width:768px) {
     .contenedor-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.animated {
+    animation-name: cambiobg;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cambiobg {
+    0% {
+        background-color: red;
+        color: white;
+    }
+    10% {
+        background-color: blue;
+        color: white;
+        transform: translateX(-20rem);
+    }
+    30% {
+        background-color: green;
+        border-radius: 50%;
+        color: white;
+        transform: translateX(20rem);
+    }
+    50% {
+        background-color: indigo;
+        border-radius: 50%;
+        color: white;
+        transform: translateY(-20rem);
+    }
+    80% {
+        border-radius: 0%;
+        background-color: yellowgreen;
+        color: white;
+        transform: translateY(20rem);
+    }
+    100% {
+        background-color: red;
+        color: white;
     }
 }
